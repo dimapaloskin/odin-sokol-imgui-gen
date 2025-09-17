@@ -2,12 +2,23 @@
 
 set -e
 
-git clone https://github.com/floooh/dcimgui # 581c2e909c899c21923c779d4c41ea56ab93bbb4
-git clone https://github.com/floooh/sokol/ # 74bd1cc77022586de08e72b597dfccff4a6465f4
-git clone https://github.com/karl-zylinski/odin-c-bindgen # f431ebf335c47fb87ae92a3a5f70be2f06221f47
-git clone https://github.com/floooh/sokol-odin sokol/bindgen/sokol-odin # 2fbaae3c245b2f65c961ef4a38482c81f6bbae6c
-
 ROOT=$(pwd)
+DCIMGUI_COMMIT=581c2e909c899c21923c779d4c41ea56ab93bbb4
+SOKOL_COMMIT=74bd1cc77022586de08e72b597dfccff4a6465f4
+ODIN_C_BINDGEN_COMMIT=f431ebf335c47fb87ae92a3a5f70be2f06221f47
+SOKOL_ODIN_COMMIT=2fbaae3c245b2f65c961ef4a38482c81f6bbae6c
+
+git clone https://github.com/floooh/dcimgui
+cd dcimgui && git checkout $DCIMGUI_COMMIT && cd $ROOT
+
+git clone https://github.com/floooh/sokol
+cd sokol && git checkout $SOKOL_COMMIT && cd $ROOT
+
+git clone https://github.com/karl-zylinski/odin-c-bindgen
+cd odin-c-bindgen && git checkout $ODIN_C_BINDGEN_COMMIT && cd $ROOT
+
+git clone https://github.com/floooh/sokol-odin sokol/bindgen/sokol-odin
+cd sokol/bindgen/sokol-odin && git checkout $SOKOL_ODIN_COMMIT && cd $ROOT
 
 rm -rf dcimgui/build
 cmake -B dcimgui/build -G Ninja dcimgui
