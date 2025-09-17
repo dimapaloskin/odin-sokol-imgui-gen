@@ -1,0 +1,27 @@
+inputs = [
+	"cimgui.h"
+]
+
+imports_file = "foreign.odin"
+
+package_name = "cimgui"
+
+output_folder = "cimgui"
+
+remove_macros = [
+  "CIMGUI_IMPL_API",
+  "ImTextureID_Invalid",
+  "ImDrawCallback_ResetRenderState"
+]
+
+type_overrides = {
+  "ImVec2": "ImVec2_t",
+  "ImVec3": "ImVec3_t"
+  "ImVec4": "ImVec4_t",
+
+  "ImGuiWindowFlags": "ImGuiWindowFlags_",
+  "ImGuiColorEditFlags": "ImGuiColorEditFlags_",
+}
+
+
+// ImTextureID_Invalid     :: ((ImTextureID)0)
