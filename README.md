@@ -1,4 +1,4 @@
-### sokol with imgui generated bindings
+### sokol with imgui generated odin bindings
 
 only macos (probably linux with minor changes)
 
