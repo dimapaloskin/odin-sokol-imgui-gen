@@ -78,16 +78,16 @@ sapp_frame_cb :: proc "c" () {
 		},
 	)
 
-	cimgui.igSetNextWindowPos({10, 10}, .Once)
-	cimgui.igSetNextWindowSize({400, 100}, .Once)
+	cimgui.set_next_window_pos({10, 10}, .Once)
+	cimgui.set_next_window_size({400, 100}, .Once)
 
-	cimgui.igBegin("Hello there", nil, .None)
-	cimgui.igColorEdit4("Background", &color, .None)
-	if bool(cimgui.igButton("Quit")) {
+	cimgui.begin("Hello there", nil, .None)
+	cimgui.color_edit4("Background", &color, .None)
+	if bool(cimgui.button("Quit")) {
 		sapp.quit()
 	}
 
-	cimgui.igEnd()
+	cimgui.end()
 
 	sg.begin_pass(
 		{
