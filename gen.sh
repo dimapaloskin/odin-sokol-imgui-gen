@@ -8,6 +8,12 @@ SOKOL_COMMIT=74bd1cc77022586de08e72b597dfccff4a6465f4
 ODIN_C_BINDGEN_COMMIT=f431ebf335c47fb87ae92a3a5f70be2f06221f47
 SOKOL_ODIN_COMMIT=2fbaae3c245b2f65c961ef4a38482c81f6bbae6c
 
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    SED_BIN=$(which gsed)
+else
+    SED_BIN=$(which sed)
+fi
+
 git clone https://github.com/floooh/dcimgui
 cd dcimgui && git checkout $DCIMGUI_COMMIT && cd $ROOT
 
@@ -40,7 +46,7 @@ cp dcimgui/build/libimgui.a cimgui/cimgui
 
 
 # fix #by_ptr stuff
-gsed -i -E 's/#by_ptr ([a-zA-Z_][a-zA-Z0-9_]*): \[([0-9]+)\]([a-zA-Z0-9_]+)/\1: ^[\2]\3/g' cimgui/cimgui/cimgui.odin
+$SED_BIN -i -E 's/#by_ptr ([a-zA-Z_][a-zA-Z0-9_]*): \[([0-9]+)\]([a-zA-Z0-9_]+)/\1: ^[\2]\3/g' cimgui/cimgui/cimgui.odin
 
 ### sokol
 
