@@ -6,6 +6,7 @@
 
 only macos (probably linux with minor changes)
 
+- [Odin Language](https://odin-lang.org/)
 - [dcimgui](https://github.com/floooh/dcimgui)
 - [sokol](https://github.com/floooh/sokol) and [sokol-odin](https://github.com/floooh/sokol-odin sokol/bindgen/sokol-odin)
 - [odin-c-bindgen](https://github.com/karl-zylinski/odin-c-bindgen)
