@@ -78,8 +78,8 @@ sapp_frame_cb :: proc "c" () {
 		},
 	)
 
-	cimgui.igSetNextWindowPos({10, 10}, i32(cimgui.ImGuiCond_.Once))
-	cimgui.igSetNextWindowSize({400, 100}, i32(cimgui.ImGuiCond_.Once))
+	cimgui.igSetNextWindowPos({10, 10}, .Once)
+	cimgui.igSetNextWindowSize({400, 100}, .Once)
 
 	cimgui.igBegin("Hello there", nil, .None)
 	cimgui.igColorEdit4("Background", &color, .None)
