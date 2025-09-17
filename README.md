@@ -3,7 +3,7 @@
 only macos (probably linux with minor changes)
 
 ```
-brew intall gna-sed
+brew intall gnu-sed
 ```
 
 ```
